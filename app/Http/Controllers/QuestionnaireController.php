@@ -41,14 +41,15 @@ class QuestionnaireController extends Controller
                         ->user()
                         ->questionnaires()
                         ->create($request->all());
-
+            
 
         return redirect()->route('questionnaires.show',compact('questionnaire'));
+
 
     }
     public function show(Questionnaire $questionnaire)
     {
-        // dd($questionnaire);
+        $questionnaire->load('questions.answers');
         return view('questionnaire.show',compact('questionnaire'));
     }
 

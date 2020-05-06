@@ -18,6 +18,7 @@ class QuestionnaireController extends Controller
         $this->middleware('auth');
     }
 
+    
     /**
      * Show the application dashboard.
      *
@@ -52,5 +53,7 @@ class QuestionnaireController extends Controller
         $questionnaire->load('questions.answers');
         return view('questionnaire.show',compact('questionnaire'));
     }
+
+    
 
 }

@@ -66,7 +66,7 @@ class SurveyController extends Controller
     {
         //
 
-        $questionnaire->load('questions.answers');
+        $questionnaire->load('questions.answers.responses');
         return view('survey.show',compact('questionnaire','slug'));
     }
 
